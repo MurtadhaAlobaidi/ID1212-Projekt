@@ -37,7 +37,7 @@ You can log in with your KTH `Email` and `Password`.
 
 ## What pages will be used:
 *   Profile page you can `login` and `logout`
-*   Booking date, time and more information about you   booking.   
+*   Booking date, time and more information about your booking.   
 
 <br />
 

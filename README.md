@@ -1,4 +1,4 @@
-# BOK-KYH
+# BOK-KTH
 **Course code**: ID1212 Nätverksprogrammering<br />
 **Project group number**: 6<br />
 **Group members**: Abdullah Trabulsiah ([abdullahtr249](https://github.com/abdullahtr249)) and Murtadha Hussien Ali Al-Obaidi ([mhaao](https://github.com/MurtadhaAlobaidi)).<br />

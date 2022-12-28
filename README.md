@@ -13,15 +13,11 @@ cd boka-kth
 ```bash
 npm install
 ```
-3. Run the build.
-```bash
-npm build
-```
-4. Run the server.
+3. Run the server.
 ```bash
 npm start
 ```
-5. Start using the project
+4. Start using the project
 <br />
 
 ## What is this project

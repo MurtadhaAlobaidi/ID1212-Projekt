@@ -3,12 +3,18 @@ import AppStyles from '../styles/AppStyles';
 import React from 'react';
 import InlineTextButton from '../components/InlineTextButton';
 import { auth } from '../config/firebase'
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 
 export default function Login({ navigation }) {
 
   if (auth.currentUser) {
     navigation.navigate("Home");
+  } else {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigation.navigate("Home")
+      }
+    });
   }
   let [email, setEmail] = React.useState("");
   let [password, setPassWord] = React.useState("");
@@ -36,6 +42,7 @@ export default function Login({ navigation }) {
         placeholderTextColor="#BEBEBE"
         value={email}
         onChangeText={setEmail}
+        keyboardType='email-address'
       />
       <TextInput 
         placeholder='Lösenord' 

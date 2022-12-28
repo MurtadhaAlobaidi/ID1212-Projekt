@@ -11,11 +11,11 @@ cd boka-kth
 ```
 2. Run the installation of the project.
 ```bash
-npm run install
+npm install
 ```
 3. Run the build.
 ```bash
-npm run build
+npm build
 ```
 4. Run the server.
 ```bash

@@ -69,24 +69,24 @@ export default function Home({ navigation }) {
 
 
 
-    const functions = require('firebase-functions');
-    const admin = require('firebase-admin');
-    admin.initializeApp();
+    // const functions = require('firebase-functions');
+    // const admin = require('firebase-admin');
+    // admin.initializeApp();
 
-    exports.resetAppointmentTimes = functions.pubsub.schedule('0 0 * * *').onRun((context) => {
-        const appointmentTimesCollectionRef = db.database().collection('appointmentTimes');
-        appointmentTimesCollectionRef.get().then(querySnapshot => {
-            if (querySnapshot.empty) {
-                return null;
-            } else {
-                let batch = db.database().batch();
-                querySnapshot.forEach(doc => {
-                    batch.update(doc.ref, { available: true });
-                });
-                return batch.commit();
-            }
-        }).catch(error => { console.log(error); });
-    });
+    // exports.resetAppointmentTimes = functions.pubsub.schedule('0 0 * * *').onRun((context) => {
+    //     const appointmentTimesCollectionRef = db.database().collection('appointmentTimes');
+    //     appointmentTimesCollectionRef.get().then(querySnapshot => {
+    //         if (querySnapshot.empty) {
+    //             return null;
+    //         } else {
+    //             let batch = db.database().batch();
+    //             querySnapshot.forEach(doc => {
+    //                 batch.update(doc.ref, { available: true });
+    //             });
+    //             return batch.commit();
+    //         }
+    //     }).catch(error => { console.log(error); });
+    // });
 
 
 

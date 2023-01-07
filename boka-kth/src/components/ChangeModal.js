@@ -2,7 +2,7 @@ import { View, Text, TextInput, Button } from 'react-native';
 import React from 'react';
 import AppStyles from '../styles/AppStyles';
 
-export default function BookingModal(props) {
+export default function ChangeModal(props) {
   let [room, setRoom] = React.useState("");
   let [start, setStart] = React.useState("");
   let [end, setEnd] = React.useState("");
@@ -40,7 +40,7 @@ export default function BookingModal(props) {
           const x = start.replace(':', '');
           const y = end.replace(':', '');
           const z = y-x;
-          if (z > 0 && z < 201 && (x%100 == 0) && (y%100 == 0)) {
+          if (z > 0 && z < 201 && (x%100 == 0 || x%100 == 30) && (y%100 == 0 || y%100 == 30)) {
             props.room(room,start,end);
             setRoom("");
             setStart("");

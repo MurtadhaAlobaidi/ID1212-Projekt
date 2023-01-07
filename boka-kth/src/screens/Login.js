@@ -7,24 +7,33 @@ import { signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
 
 export default function Login({ navigation }) {
 
-  if (auth.currentUser) {
-    navigation.navigate("Home");
-  } else {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigation.navigate("Home")
-      }
-    });
-  }
+  // if (auth.currentUser) {
+  //   navigation.navigate("Home");
+  // } 
+  // else {
+  //   onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       navigation.navigate("Home")
+  //     }
+  //   });
+  // }
+
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      navigation.navigate("Home")
+    }
+  });
+
+
   let [email, setEmail] = React.useState("");
-  let [password, setPassWord] = React.useState("");
+  let [password, setPassword] = React.useState("");
   let [errorMessage, setErrorMessage] = React.useState("");
 
   let signIn = () => {
     if (email !== "" && password !== "") {
       signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-         navigation.navigate("Home", {user: userCredential.user})
+         navigation.navigate("Home", {user: userCredential.user});
         })
         .catch((error) => {
           setErrorMessage(error.message)
@@ -50,7 +59,7 @@ export default function Login({ navigation }) {
         placeholderTextColor="#BEBEBE" 
         secureTextEntry={true}
         value={password}
-        onChangeText={setPassWord}
+        onChangeText={setPassword}
       />
       <Button title="Login" onPress={signIn} color="#f7b267" style={AppStyles.loginButton} />
       <View style={[AppStyles.rowContainer, AppStyles.topMargin]}>

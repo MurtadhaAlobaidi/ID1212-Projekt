@@ -32,6 +32,10 @@ export default StyleSheet.create({
         backgroundColor: '#3485E2',
         borderColor: '#3485E2'
     },
+    roomButton: {
+        backgroundColor: '#DFD985',
+        borderColor: '#DFD985'
+    },
     resetButton: {
         backgroundColor: '#3485E2',
         borderColor: '#3485E2',
@@ -39,10 +43,25 @@ export default StyleSheet.create({
     logoutButton: {
         backgroundColor: '#3485E2',
         borderColor: '#3485E2',
-        alignItems: "flex-start",
-        alignSelf: 'flex-start',
-        alignContent: 'flex-start',
-        justifyContent: 'flex-start'
+    },
+    bookingButton: {
+        backgroundColor: '#3485E2',
+        borderColor: '#1BCD51',
+        borderRadius: 15,
+        padding: 10,
+        marginHorizontal: 3
+        
+    },
+    pressedBookingButton: {
+        color: "#87F1FF",
+        opacity: 0.6
+    },
+    disabledBookingButton: {
+        backgroundColor: '#7D7D7D',
+        borderColor: '#1BCD51',
+        borderRadius: 15,
+        padding: 10,
+        marginHorizontal: 3
     },
     inlineTextButton: {
         color: "#1B40F7",
